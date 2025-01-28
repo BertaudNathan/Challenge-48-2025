@@ -22,7 +22,7 @@
 const messageInput = document.getElementById('message');
 const sendButton = document.getElementById('send');
 
-const socket = new WebSocket('ws://localhost:3000');
+const socket = new WebSocket("ws://{{ getHostByName(getHostName())}}:3000");
 
 socket.onopen = () => {
     console.log('Connected to the server');
