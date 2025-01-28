@@ -21,7 +21,7 @@
         const chatBox = document.getElementById('messages');
 const messageInput = document.getElementById('message');
 const sendButton = document.getElementById('send');
-const socket = new WebSocket("ws://{{$_SERVER['REMOTE_ADDR']}}:3000");
+const socket = new WebSocket("ws://10.31.36.28:3000");
 
 socket.onopen = () => {
     console.log('Connected to the server');
