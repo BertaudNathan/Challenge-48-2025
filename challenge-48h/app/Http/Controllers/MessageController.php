@@ -25,6 +25,6 @@ class MessageController extends Controller
 
         $message = Message::create($request->all());
         broadcast(new MessageSent($message))->toOthers();
-        return redirect()->back();;
+        return redirect("/map");
     }
 }

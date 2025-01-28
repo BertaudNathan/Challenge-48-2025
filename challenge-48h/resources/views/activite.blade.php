@@ -75,23 +75,23 @@
 <body>
   <div class="container">
     <h2 class="text-center mb-4">Formulaire Activité</h2>
-    <form>
+    <form action="/activite" method="POST">
 
       <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-card-text"></i></span>
-        <input type="text" class="form-control" id="nom" placeholder="Nom de l'activité">
+        <input type="text" name="nom" class="form-control" id="nom" placeholder="Nom de l'activité">
       </div>
 
 
       <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-pencil-square"></i></span>
-        <input type="text" class="form-control" id="description" placeholder="Description de l'activité">
+        <input type="text" name="description" class="form-control" id="description" placeholder="Description de l'activité">
       </div>
 
 
       <div class="input-group mb-3">
         <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
-        <select class="form-select" id="role">
+        <select name="zone" class="form-select" id="role">
           <option selected>Choisir une zone</option>
           <option value="1">Zone 1</option>
           <option value="2">Zone 2</option>
@@ -102,7 +102,7 @@
       </div>
 
       <div class="mb-4">
-        <label for="dangerLevel" class="form-label"><i class="bi bi-exclamation-circle"></i> Niveau de danger</label>
+        <label for="dangerLevel"  name="danger" class="form-label"><i class="bi bi-exclamation-circle"></i> Niveau de danger</label>
         <input 
           type="range" 
           class="form-range" 

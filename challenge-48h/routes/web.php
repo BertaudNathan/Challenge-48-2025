@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ActiviteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,6 +15,12 @@ Route::get('/dashboard', function () {
 Route::get('/', function () {
     return view('map');
 })->middleware(['auth', 'verified'])->name('map');
+
+Route::get('/activite', function () {
+    return view('activite');
+})->name('activite');
+
+Route::post('/activite', [ActiviteController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
