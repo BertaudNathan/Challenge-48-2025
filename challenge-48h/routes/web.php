@@ -12,8 +12,8 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', function () {
-    return view('map');
-})->middleware(['auth', 'verified'])->name('map');
+    return view('map',['messages'=> []]);
+})->name('map');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -18,12 +18,9 @@
                 </div>
             @endforeach
         </div>
-        <form action="/messages" method="POST">
-            @csrf
             <input type="text" name="user_name" placeholder="Votre Nom" required>
             <textarea name="message" placeholder="Tapez votre message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
+            <button id="envoyer" type="submit">Envoyer</button>
     </div>
 </body>
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
