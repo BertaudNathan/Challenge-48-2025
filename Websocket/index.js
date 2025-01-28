@@ -48,7 +48,21 @@ wss.on('connection', function connection(ws) {
     ws.send('Welcome to the chat!');
 });
 
-// Start the server
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+const dns = require('node:dns');
+const os = require('node:os');
+
+const options = { family: 4 };
+
+dns.lookup(os.hostname(), options, (err, addr) => {
+  if (err) {
+    console.error(err);
+  } else {
+    server.listen(3000,addr ,() => {
+        console.log(`Server running on port ${PORT} : ${addr}`);
+    });
+  }
 });
+
+/*
+// Start the server
+*/
